@@ -36,11 +36,19 @@ Also must fill in account and private key in _zkBitcoinMiner.conf file
   - If omitted, you are not able to mine, a dummy account is the default with no funds.
   - Replace the value with your own mining Ethereum address Private key (64 characters long including, case-sensitive).
 
-2c) MinzkBTCperMint=
-  - If omitted, it is set to the default 3.5 zkBitcoin per mint transaction.
-  - Replace this value with the amount of zkBitcoin you wish to recieve per Mint.
+2c) MinZKBTCperMint=
+  - If omitted, it is set to the default 500 zkBitcoin per mint transaction.
+  - Replace this value with the minimum amount of zkBitcoin you wish to recieve per Mint.
   
-2d) web3api=
+2d) MaxZKBTCperMint=
+  - If omitted, it is set to the default 250 zkBitcoin per mint transaction.
+  - Replace this value with the maximum amount of zkBitcoin you wish to recieve per Mint.
+  
+2e) HowManyBlocksAWAYFromAdjustmentToSendMinimumZKBTC=
+  - If omitted, it is set to the default 100 blocks before a mint and it will send our solution if MinZKBTCperMint is met.
+  - Replace this value with the amount of zkBitcoin blocks away from the adjustment do you want to start sending MinZKBTCperMint, can be negative.
+  
+2f) web3api=
   - If omitted, it is set to my Alchemy account.
   - Replace the value with your web3api as you desire.
 
@@ -167,7 +175,11 @@ Options:
 
 -  privateKey              (Solo only) Miner's private key
 
--  MinzkBTCperMint         (Solo only) Minimum amount of zkBitcoin to allow the mint to succeed
+-  MinZKBTCperMint         (Solo only) Minimum amount of zkBitcoin to allow the mint to succeed
+
+-  MaxZKBTCperMint         (Solo only) Maxmium amount of zkBitcoin to allow the mint to succeed
+
+-  HowManyBlocksAWAYFromAdjustmentToSendMinimumZKBTC (Solo only) How many blocks way from a readjustment do you want to send MinZKBTCperMint
 
 -  NFTApiURL               (Solo only) URL to the API for NFT minting
   
